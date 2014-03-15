@@ -31,7 +31,11 @@ STATIC_URL='/static/'
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', None)
+
+#Mandrill API KEY
+MANDRILL_API_KEY = os.environ.get('MANDRILL_API_KEY', None)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -73,7 +77,7 @@ TEMPLATE_DIRS = (BASE_DIR+'/templates/',)
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -81,4 +85,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_PROFILE_MODULE = "account.UserProfile"
 
+from memcacheify import memcacheify
+CACHES = memcacheify()
