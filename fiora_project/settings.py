@@ -31,8 +31,7 @@ STATIC_URL='/static/'
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_s9uqd^tka_6v9g3%+rc!f^=9pja!rqnw2j81p)f=4=$1f$j0s'
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '_s9uqd^tka_6v9g3%+rc!f^=9pja!rqnw2j81p)f=4=$1f$j0s')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
