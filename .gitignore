@@ -1,6 +1,7 @@
 venv
 *.pyc
 staticfiles
+fiora_db
 
 # Courtesy of Github
 # Byte-compiled / optimized / DLL files
