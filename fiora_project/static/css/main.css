@@ -1,0 +1,59 @@
+/*
+ * Color Scheme
+ * Red: rgb(172, 36, 43)
+ * Champagne: rgb(171, 148, 95)
+ * Slate Blue: rgb(62, 79, 97)
+ * Pink: rgb(205, 126, 157)
+ * Gray rgb(235, 235, 235)
+ */
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    height: 100%;
+}
+/*Index Page Styles*/
+#welcome.jumbotron {
+    padding-top: 80px;
+    text-shadow: 0px 0px 5px black;
+    color: white;
+    background-image: url('/static/img/welcome_banner.jpg');
+    height: 40%;
+    background-repeat: no-repeat;
+}
+.header-login {
+    float: right;
+    margin-right: 10%;
+}
+.header-login > .btn {
+    display:inline-block;    
+}
+.header-login > h3 {
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+#iama-well.well {
+    padding-top: 27px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 13px;
+}
+.iama {
+    font-size: 2.4em;
+    text-align: center;
+}
+.index-container {
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(62, 79, 97);
+}
+#iama-well .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
