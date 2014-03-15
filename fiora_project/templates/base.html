@@ -1,0 +1,28 @@
+{% load static from staticfiles %}
+<html>
+    <!-- base.html -->
+    <head>
+        <title>{% block title %}Fiora: find a worthy opponent{% endblock %}</title>
+        <!-- External Sources -->
+        
+        <!-- jQuery -->                
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" ></script>
+        
+        <!-- Bootstrap Sources -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" ></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+        
+        
+        <!-- Local Sources -->
+        <link rel="shortcut icon" href="{% static "img/favicon.png" %}" />
+        <link rel="stylesheet" href="{% static "css/main.css" %}" />
+        <script type="text/javascript" src="{% static "js/fiora.js" %}" />
+        
+        {% block scripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html> 

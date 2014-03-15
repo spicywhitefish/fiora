@@ -26,6 +26,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 STATIC_URL='/static/'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'fiora_project.urls'
 
 WSGI_APPLICATION = 'fiora_project.wsgi.application'
 
-
+TEMPLATE_DIRS = (BASE_DIR+'/templates/',)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
