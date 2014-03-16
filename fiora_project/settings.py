@@ -55,6 +55,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gunicorn',
+    'south',
+    'widget_tweaks',
+    'fiora_project.accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,6 +74,11 @@ ROOT_URLCONF = 'fiora_project.urls'
 WSGI_APPLICATION = 'fiora_project.wsgi.application'
 
 TEMPLATE_DIRS = (BASE_DIR+'/templates/',)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -89,3 +97,5 @@ AUTH_PROFILE_MODULE = "account.UserProfile"
 
 from memcacheify import memcacheify
 CACHES = memcacheify()
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

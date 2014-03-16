@@ -1,53 +1,43 @@
 <!-- index.html -->
 {% extends "main.html" %}
+{% load widget_tweaks %}
 {% block title %}Duelist Discoverer{% endblock %}
-{% block content %}
-
-<div class="index-container">
+{% block header %}
+    <div class="bg-container">
     <div class="header-login">
         <h3>Already a member?</h3>
         <a href="#" class="btn btn-default btn-block">Login</a>
     </div>
-<div id="welcome" class="jumbotron">
+{% endblock %}
+{% block content %}
+<div id="welcome" class="jumbotron {{banner_class}}">
     <div class="container">
         <h1>Longing for a worthy opponent?</h1>
         <p>your journey ends here.</p>
     </div>
 </div>
-    <div class="container">
-        <div class="row">
-            <div id="iama-well" class="well">
-                <form class="form-horizontal">
-                    <fieldset>
-                        <div class="col-lg-2">
-                            <p class="iama">I am a</p> 
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">     
-                                <select  class="form-control input-lg">
-                                    <option>Blade Wielding</option>
-                                    <option>Gun Toting</option>
-                                    <option>Fist Pounding</option>
-                                    <option>Rhyme Spitting</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">     
-                                <select class="form-control input-lg">
-                                    <option>Lady</option>
-                                    <option>Gentleman</option>
-                                    <option>Robot</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <a class="btn btn-primary btn-lg btn-block">Continue&emsp;></a>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+<div class="container">
+    <div class="row">
+        <div id="iama-well" class="well">
+            <form action="{% url 'accounts.views.iama' %}" method="post" class="form-horizontal">
+                {% csrf_token %}
+                <fieldset>
+                    <div class="col-lg-2">
+                        <p class="iama">I am a</p> 
+                    </div>
+                    <div class="col-lg-4">
+                        {{ iama_form.weapon|add_class:"form-control input-lg" }}
+                    </div>
+                    <div class="col-lg-4">
+                        {{ iama_form.gender|add_class:"form-control input-lg" }}
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Continue&emsp;></button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
 </div>
 {% endblock %}
+{% block footer %}</div>{% endblock %}
