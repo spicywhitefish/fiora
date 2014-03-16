@@ -12,6 +12,7 @@ docopt==0.4.0
 gunicorn==18.0
 mandrill==1.0.53
 psycopg2==2.5.2
+pylibmc==1.2.3
 pystache==0.5.3
 python-memcached==1.53
 requests==2.2.1
